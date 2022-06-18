@@ -413,4 +413,6 @@ pub struct ModalSubmitInteractionData {
     pub custom_id: String,
     /// The components.
     pub components: Vec<ActionRow>,
+    /// The given values of the SelectMenus
+    pub values: Vec<String>,
 }
