@@ -332,11 +332,13 @@ impl<'de> Deserialize<'de> for ModalSubmitInteraction {
             .and_then(InteractionType::deserialize)
             .map_err(DeError::custom)?;
 
+        dbg!(map);
         let data = map
             .remove("data")
             .ok_or_else(|| DeError::custom("expected data"))
             .and_then(ModalSubmitInteractionData::deserialize)
             .map_err(DeError::custom)?;
+        dbg!(&data);
 
         let guild_id = map
             .remove("guild_id")
